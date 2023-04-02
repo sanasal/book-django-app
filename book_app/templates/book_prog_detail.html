@@ -1,0 +1,244 @@
+{% block content %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <title>Book Details</title>
+    <style>
+        .footer
+              {
+                position: relative;
+                top: 200px;
+                left: 50px;;
+                transform: translateY(-50%);
+                width: 100%;
+                text-align: center;
+              }
+              .btns
+              {
+                padding-top: 20px;
+                padding-bottom: 4%;
+                display: inline-block;
+                width: 90px;
+                height:65px;
+                margin: 20px;
+                border-radius: 50%;
+                box-shadow: 0 2px 18px rgb(0, 0, 0 , 0.115);
+                color: #ff6666;
+                overflow: hidden;
+                position: relative;
+
+              }
+              .btns ion-icon
+              {
+                line-height: 90px;
+                font-size: 40px;
+                transition: 0.2s linear;
+              }
+              .btns:hover ion-icon
+              {
+                transform: scale(1.2);
+                color: #f1f1f1;
+              }
+              .btns::before
+              {
+                content: "";
+                position: absolute;
+                width: 120%;
+                height: 120%;
+                background: #ff6666;
+                transform: rotate(45deg);
+                left: -110%;
+                top: 90%;
+              }
+              .btns:hover::before
+              {
+                animation-name: aaa;
+                animation-duration:0.7s ;
+                top: -10%;
+                left: -10%;
+              }
+              @keyframes aaa
+              {
+                0%{
+                  left: -110%;
+                  top:90%;
+                }
+                50%{
+                  left: 10%;
+                  top: -30%;
+                }
+                100%{
+                  top: -10%;
+                  left: -10%;
+                }
+              }
+              .nav-href
+              {
+                  text-decoration: none;
+                  color: black;
+                  font-size: 18px;
+                  margin-right: 50px;
+                  position: relative;
+                  left: -100px;
+                  top: 20px;
+              }
+              nav  
+              {
+                position: fixed;
+              }
+              nav p 
+              {
+                  color: #ff6666;
+              }
+              nav ul
+              {
+                margin-right: 70px;
+              }
+              nav ul li
+              {
+                position: relative;
+                display: inline-block;
+              }
+              nav ul li a
+              {
+                text-decoration: none;
+                color: #fff;
+                text-transform: uppercase;
+              }
+              nav ul li::after
+              {
+                content: '';
+                height: 3px;
+                width: 0;
+                background: #ff6666;
+                position: absolute;
+                left: 0%;
+                bottom: -5px;
+                transition: 0.5s;
+              }
+              nav ul li:hover::after
+              {
+                width: 100%;
+              }
+              .items
+              {
+                margin-top: 50px;
+                margin-left: 140px;
+              }
+              .download-button
+              {
+                background-color: #ff6666;
+                color: #f1f1f1;
+                margin-bottom: auto;
+              }
+              .download-button:hover
+              {
+                border-color: #ff6666;
+                color: #ff6666;
+              }
+    </style>
+</head>
+<body>
+    <!--Script section-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+
+    <!--Navbar-->
+    <nav class="navbar shadow p-3 mb-5 bg-body rounded">
+        <div>
+            <p class="display-5"> Book Shelf  <i class="bi bi-book"></i></b>
+        </div>
+        <div>
+            <ul>
+                <li class="nav-item nav-href li">
+                    <a class="nav-link" href="{% url 'book_shelf:home'%}"><i class="bi bi-house"></i> Home</a>
+                </li>
+                <li class="nav-item nav-href li">
+                  <a href="{% url 'book_shelf:report_issue'%}" class="nav-link"><i class="bi bi-telephone-fill"></i>  Report issue</a>
+                </li>
+                <li class="nav-item nav-href li">
+                  <a href="{% url 'book_shelf:add_comment'%}" class="nav-link"><i class="bi bi-chat-left-dots-fill"></i> Add Comment</a>
+                </li>
+                <li class="nav-item nav-href li">
+                  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-diagram-3-fill"></i> Types
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="{% url 'book_shelf:police'%}">Mystry and police</a></li>
+                    <li><a class="dropdown-item" href="{% url 'book_shelf:sciences'%}">Sciences</a></li>
+                    <li><a class="dropdown-item" href="{% url 'book_shelf:programming'%}">Programming</a></li>
+                    <li><a class="dropdown-item" href="{% url 'book_shelf:languages'%}">Languages</a></li>
+                    <li><a class="dropdown-item" href="{% url 'book_shelf:islam'%}">Islam</a></li>
+                    <li><a class="dropdown-item" href="{% url 'book_shelf:psychology'%}">Psychology</a></li>
+                  </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Book Details-->
+
+    <!--img section-->
+    <section class="container">
+     <div class="row">
+       <div class="col ms-5 mt-5">
+         <img src="{{ item.img.url }}" class="ms-6" alt="" width="60%" height="85%">
+       </div>
+
+
+       <!--accordion-->
+      <div class="accordion col mt-5" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              Story
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+              {{ item.story }}
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+              information
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body">
+              <div class="row">
+                <div class="col"> 
+                  <br>
+                  <br> 
+                </div>
+                <div class="col ms-5 pe-0">
+                  <img src="{{ item.img.url }}" alt="" width="50%" height="100%">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="{% url 'book_shelf:pdf' name=item.pdf_file %}">
+        <button class="btn mt-5 download-button">Download PDF Now</button>
+        </a>
+      </div>
+    </div>
+  </section>
+  <br>
+  <br>
+  <br>
+</body>
+</html>
+
+{% endblock %}
