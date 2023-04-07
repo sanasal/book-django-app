@@ -208,7 +208,7 @@
             </ul>
             <form method="post" action="{% url 'book_shelf:search_islam'%}" id="search-filter" class="form search-form">
               {% csrf_token %}
-              <input class="border border-4 rounded-3" type="text" name="name">
+              <input class="border border-4 rounded-3" type="text" placeholder="write the book full name..." name="name">
               <input class="btn search-btn" type="submit" name="submit" value="Search">
             </form>
         </div>

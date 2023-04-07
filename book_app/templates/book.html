@@ -25,6 +25,13 @@
             left: -100px;
             top: 20px;
         }
+        .nav-href2
+        {
+          text-decoration: none;
+          color: black;
+          font-size: 23px;
+          margin-top: 10px;
+        }
         nav  
         {
           position: fixed;
@@ -172,6 +179,99 @@
           padding-right: 40px;
           color: #ff6666;
         }
+        .btn.nav_button::before
+        {
+          content: '';
+          z-index: -1;
+          position: absolute;
+          top: 0%;
+          bottom: 0%;
+          left: 0%;
+          right: 0%;
+          background-color:var(--accent-color);
+          transition: transform 300ms ease-in-out;
+          transform: scaleX(0);
+          transform-origin: left;
+          border-radius: 7%;
+        }
+        .btn.nav_button
+        {
+          position: absolute;
+          left: 10px;
+          top: 500px ;
+          margin-right: 9px;
+          transition: color 300ms ease-in-out;
+          z-index: 1;
+        }
+        .btn.nav_button:hover::before,
+        .btn.nav_button:focus::before
+        {
+            transform: scaleX(1);
+        }
+        .btn.nav_button:hover,
+        .btn.nav_button:focus
+        {
+            color: #fff;
+        }
+        .btn.nav_button2::before
+        {
+          content: '';
+          z-index: -1;
+          position: absolute;
+          top: 0%;
+          bottom: 0%;
+          left: 0%;
+          right: 0%;
+          background-color:var(--accent-color);
+          transition: transform 300ms ease-in-out;
+          transform: scaleX(0);
+          transform-origin: left;
+          border-radius: 7%;
+        }
+        .btn.nav_button2
+        {
+          position: absolute;
+          left: 90px;
+          top: 500px ;
+          margin-right: 9px;
+          transition: color 300ms ease-in-out;
+          z-index: 1;
+        }
+        .btn.nav_button2:hover::before,
+        .btn.nav_button2:focus::before
+        {
+            transform: scaleX(1);
+        }
+        .btn.nav_button2:hover,
+        .btn.nav_button2:focus
+        {
+            color: #fff;
+        }
+        .mobile-nav
+        {
+          visibility: hidden;
+        }
+        .lab-nav
+        {
+          visibility: visible;
+        }
+        @media screen and (max-width:870px) and (min-width:320px)
+        {
+          .mobile-nav
+          {
+            visibility: visible;
+            position: relative;
+          }
+          .lab-nav
+          {
+            visibility: hidden;
+            position: absolute;
+          }
+          body
+          {
+            box-sizing: initial;
+          }
+        }
     </style>
 </head>
 <body>
@@ -179,11 +279,63 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
 
-    <!--Navbar-->
-    <nav class="navbar shadow p-3 mb-5 bg-body rounded">
+    <nav class="navbar mobile-nav bg-light fixed-top">
+      <div class="container-fluid">
+        <p class="display-5"> Book Shelf  <i class="bi bi-book"></i></p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav `justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item nav-href2 li">
+                  <a class="nav-link" href="{% url 'book_shelf:home'%}"><i class="bi bi-house"></i> Home</a>
+              </li>
+              <li class="nav-item nav-href2 li">
+                  <a href="{% url 'book_shelf:report_issue'%}" class="nav-link"><i class="bi bi-telephone-fill"></i> Report issue</a>
+              </li>
+              <li class="nav-item nav-href2 li">
+                <a href="{% url 'book_shelf:add_comment'%}" class="nav-link"><i class="bi bi-chat-left-dots-fill"></i> Add Comment</a>
+              </li>
+              <li class="nav-item nav-href2 li">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-diagram-3-fill"></i> Types
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:police'%}">Mystry and police</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:sciences'%}">Sciences</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:programming'%}">Programming</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:languages'%}">Languages</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:islam'%}">Islam</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:psychology'%}">Psychology</a></li>
+                </ul>
+              </li>
+          </ul>
+          {% if user.is_authenticated %}
+           <i class="bi bi-person-circle nav-prof btn d-flex mt-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></i>
+          <form action="/log_out/" method="post" class="d-flex mt-3">
+          {% csrf_token %}
+            <a><button type="submit" class="btn nav_button">Log out</button></a>
+          </form>
+          {% else %}
+           <a href="{% url 'book_shelf:log_in'%}"><button type="submit" class="btn nav_button2">Log in</button></a>
+           <a href="{% url 'book_shelf:sign_in'%}"><button type="submit" class="btn nav_button">Sign in</button></a>
+          {% endif %}
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    <!--Desktop Navbar-->
+    <nav class="navbar shadow p-3 mb-5 bg-body rounded lab-nav">
         <div>
-            <p class="display-5"> Book Shelf  <i class="bi bi-book"></i></b>
+            <p class="display-5"> Book Shelf  <i class="bi bi-book"></i></p>
         </div>
         <div>
             <ul>
@@ -222,7 +374,7 @@
              <a href="{% url 'book_shelf:sign_in'%}"><button type="submit" class="btn nav-button2">Sign in</button></a>
             {% endif %}
         </div>
-    </nav>
+      </nav>
 
     <!--Profile Modal-->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -271,6 +423,11 @@
         </button>
       </div>
     </section>
+
+    <!--Scripts section-->
+    <script>
+      // mobile navbar
+    </script>
     
 </body>
 </html>
