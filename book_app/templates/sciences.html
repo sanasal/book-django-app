@@ -15,7 +15,7 @@
              .footer
               {
                 position: relative;
-                top: 200px;
+                top: 100px;
                 left: 50px;;
                 transform: translateY(-50%);
                 width: 100%;
@@ -167,6 +167,12 @@
                 background-color: #f17a7a;
                 color: #f1f1f1;
               }
+              .photo
+              {
+                position: relative;
+                left: -10px;
+                top: 150px;
+              }
     </style>
 </head>
 <body>
@@ -246,6 +252,11 @@
       {% endfor %}
      </div>
      </div>
+
+    <!--photos-->
+    <div>
+      <img src="{% static 'science.webp'%}" height="65%" class="photo" alt="">
+    </div>
 
    <!--footer section-->
    <footer>
