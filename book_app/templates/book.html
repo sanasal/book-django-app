@@ -272,6 +272,22 @@
             box-sizing: initial;
           }
         }
+        .navbar_img
+        {
+          position: relative;
+          left:470px;
+          top: -37px;
+        }
+        .text 
+        {
+          position: absolute;
+          top: 230px;
+          left: 110px;
+          font-size: 30px;
+          color:black;
+          line-height: 50px;
+          font-style: oblique;
+        }
     </style>
 </head>
 <body>
@@ -394,7 +410,19 @@
       </div>
     </div>
 
-    <!--Home section images slider-->
+
+    <div id="home">
+      <img src="{% static 'book background 2.webp' %}" class="navbar_img" alt="navbar-img">
+      <div class="text">
+        Books are the magic portals that let you 
+        <br>
+        explore the wonders of the universe 
+        <br>
+        without leaving your cozy spot.✨
+      </div>
+    </div>
+
+    <!--Home section images slider
     <section style="position: relative; top:-47px;">
       <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -422,7 +450,7 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-    </section>
+    </section>-->
 
     <!--Scripts section-->
     <script>

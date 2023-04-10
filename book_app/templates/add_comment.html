@@ -15,8 +15,8 @@
              .footer
               {
                 position: relative;
-                top: 800px;
-                left: 50px;;
+                top: 750px;
+                left: 150px;;
                 transform: translateY(-50%);
                 width: 100%;
                 text-align: center;
@@ -138,8 +138,8 @@
               form label
               {
                 position: relative;
-                left: 450px;
-                top: -250px;
+                left: 400px;
+                top: -230px;
                 font-size: 40px;
               }
               form textarea
@@ -202,6 +202,12 @@
                 margin-top: 50px;
                 font-size: 25px;
                 color: #ff6666;
+              }
+              .books_photo
+              {
+                position: relative;
+                top:800px;
+                left:50px;
               }
     </style>
 </head>
@@ -267,6 +273,12 @@
        </div>
        <textarea name="comments" cols="30" rows="10" disabled>{{ comment.comment }}</textarea>
       {% endfor %}
+    </div>
+
+
+    <!--photos-->
+    <div>
+      <img src="{% static 'books photo.webp'%}" height="65%" class="books_photo" alt="">
     </div>
 
    <!--footer section-->
