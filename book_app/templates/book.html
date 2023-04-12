@@ -255,23 +255,6 @@
         {
           visibility: visible;
         }
-        @media screen and (max-width:870px) and (min-width:320px)
-        {
-          .mobile-nav
-          {
-            visibility: visible;
-            position: relative;
-          }
-          .lab-nav
-          {
-            visibility: hidden;
-            position: absolute;
-          }
-          body
-          {
-            box-sizing: initial;
-          }
-        }
         .navbar_img
         {
           position: relative;
@@ -387,6 +370,38 @@
             fill: var(--fill);
           }
         }        
+        /*Responsive design*/
+        @media screen and (max-width:900px) and (min-width:200px)
+        {
+          .mobile-nav
+          {
+            visibility: visible;
+            position: relative;
+          }
+          .lab-nav
+          {
+            visibility: hidden;
+            position: absolute;
+          }
+          .text
+          {
+            font-size: 17px;
+            position: relative;
+            left: 15px;
+            top: 7;
+          }
+          .home-slide
+          {
+            position: relative;
+            left: 0px;
+            top: 70px;
+            width: fit-content;
+          }
+          body
+          {
+            box-sizing: border-box;
+          }
+        }
     </style>
 </head>
 <body>
@@ -396,6 +411,7 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
 
+    <!--responsive navbar-->
     <nav class="navbar mobile-nav bg-light fixed-top">
       <div class="container-fluid">
         <p class="display-5"> Book Shelf  <i class="bi bi-book"></i></p>
@@ -533,6 +549,7 @@
     </div>
 
 
+    <!--Home text-->
     <div class="text">
       Books are the magic portals that let you 
       <br>
