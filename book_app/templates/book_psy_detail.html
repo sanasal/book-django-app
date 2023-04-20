@@ -143,6 +143,31 @@
                 border-color: #ff6666;
                 color: #ff6666;
               }
+              .mobile-nav
+              {
+                visibility: hidden;
+              }
+              /* Responsive Design */
+              @media screen and (max-width:800px) and (min-width:200px)
+              {
+                .mobile-nav
+                {
+                  visibility: visible;
+                  margin-bottom: 10%;
+                  font-size: 22px;
+                }
+                .nav-icon
+                {
+                  position: relative;
+                  left: 75%;
+                  top: -55px;
+                  font-size: 25px;
+                }
+                .lap-nav
+                {
+                  display: none;
+                }
+              }
     </style>
 </head>
 <body>
@@ -153,7 +178,7 @@
 
 
     <!--Navbar-->
-    <nav class="navbar shadow p-3 mb-5 bg-body rounded">
+    <nav class="navbar shadow p-3 mb-5 bg-body rounded lap-nav">
         <div>
             <p class="display-5"> Book Shelf  <i class="bi bi-book"></i></b>
         </div>
@@ -185,6 +210,47 @@
         </div>
     </nav>
 
+    <!--Mobile navbar-->
+    <nav class="navbar shadow mobile-nav bg-light">
+      <div class="container-fluid">
+        <p class="display-5"> Book Shelf <img src="{% static 'book.gif'%}" class="book_icon" alt="" width="12%" height="12%"></p>
+        <button class="navbar-toggler nav-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item nav-href2 li">
+                  <a class="nav-link" href="{% url 'book_shelf:home'%}"><i class="bi bi-house"></i> Home</a>
+              </li>
+              <li class="nav-item nav-href2 li">
+                  <a href="{% url 'book_shelf:report_issue'%}" class="nav-link"><i class="bi bi-telephone-fill"></i> Report issue</a>
+              </li>
+              <li class="nav-item nav-href2 li">
+                <a href="{% url 'book_shelf:add_comment'%}" class="nav-link"><i class="bi bi-chat-left-dots-fill"></i> Add Comment</a>
+              </li>
+              <li class="nav-item nav-href2 li">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-diagram-3-fill"></i> Types
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:police'%}">Mystry and police</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:sciences'%}">Sciences</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:programming'%}">Programming</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:languages'%}">Languages</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:islam'%}">Islam</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:psychology'%}">Psychology</a></li>
+                </ul>
+              </li>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <!--Book Details-->
 
     <!--img section-->
@@ -194,28 +260,27 @@
          <img src="{{ item.img.url }}" class="ms-6" alt="" width="60%" height="85%">
        </div>
 
-
-       <!--accordion-->
-      <div class="accordion col mt-5" id="accordionPanelsStayOpenExample">
+      <!--accordion-->
+      <div class="accordion accordion-flush col mt-5" id="accordionFlushExample">
         <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
               Story
             </button>
           </h2>
-          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
               {{ item.story }}
             </div>
           </div>
         </div>
         <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-              information
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+             auther information
             </button>
           </h2>
-          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
               <div class="row">
                 <div class="col"> 
@@ -230,14 +295,11 @@
           </div>
         </div>
         <a href="{% url 'book_shelf:pdf' name=item.pdf_file %}">
-        <button class="btn mt-5 download-button">Download PDF Now</button>
+        <button class="btn mt-5 download-button" value="{{ item.id }}">Download PDF Now</button>
         </a>
       </div>
-    </div>
+    </div> 
   </section>
-  <br>
-  <br>
-  <br>
 </body>
 </html>
 

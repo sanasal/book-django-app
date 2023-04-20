@@ -1,177 +1,310 @@
 {% block content %}
 {% load static %}
 
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/main.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <title>Report Issue</title>
-    <style>
-             .footer
-              {
-                position: relative;
-                top: 400px;
-                left: 50px;;
-                transform: translateY(-50%);
-                width: 100%;
-                text-align: center;
-              }
-              .btns
-              {
-                padding-top: 20px;
-                padding-bottom: 4%;
-                display: inline-block;
-                width: 90px;
-                height:65px;
-                margin: 20px;
-                border-radius: 50%;
-                box-shadow: 0 2px 18px rgb(0, 0, 0 , 0.115);
-                color: #ff6666;
-                overflow: hidden;
-                position: relative;
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/animated-icons/icons/book/book.json">
+  <title>Report Issue</title>
+  <style>
+    body
+    {
+      background-image: url("{% static 'aesthetic-light-pink-watercolor-background-abstract-style.jpg'%}");
+      background-size: cover;
+      background-repeat: no-repeat;
+      box-sizing: inherit;
+    }
+     footer
+    {
+      position: relative;
+      top: 400px;
+      left: 50px;;
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: center;
+    }
+    .btns
+    {
+      padding-top: 20px;
+      padding-bottom: 4%;
+      display: inline-block;
+      width: 90px;
+      height:65px;
+      margin: 20px;
+      border-radius: 50%;
+      box-shadow: 0 2px 18px rgb(0, 0, 0 , 0.115);
+      color: #ff6666;
+      overflow: hidden;
+      position: relative;
 
-              }
-              .btns ion-icon
-              {
-                line-height: 90px;
-                font-size: 40px;
-                transition: 0.2s linear;
-              }
-              .btns:hover ion-icon
-              {
-                transform: scale(1.2);
-                color: #f1f1f1;
-              }
-              .btns::before
-              {
-                content: "";
-                position: absolute;
-                width: 120%;
-                height: 120%;
-                background: #ff6666;
-                transform: rotate(45deg);
-                left: -110%;
-                top: 90%;
-              }
-              .btns:hover::before
-              {
-                animation-name: aaa;
-                animation-duration:0.7s ;
-                top: -10%;
-                left: -10%;
-              }
-              @keyframes aaa
-              {
-                0%{
-                  left: -110%;
-                  top:90%;
-                }
-                50%{
-                  left: 10%;
-                  top: -30%;
-                }
-                100%{
-                  top: -10%;
-                  left: -10%;
-                }
-              }
-              .nav-href
-              {
-                  text-decoration: none;
-                  color: black;
-                  font-size: 18px;
-                  margin-right: 50px;
-                  position: relative;
-                  left: -100px;
-                  top: 20px;
-              }
-              nav  
-              {
-                position: fixed;
-              }
-              nav p 
-              {
-                  color: #ff6666;
-              }
-              nav ul
-              {
-                margin-right: 70px;
-              }
-              nav ul li
-              {
-                position: relative;
-                display: inline-block;
-              }
-              nav ul li a
-              {
-                text-decoration: none;
-                color: #fff;
-                text-transform: uppercase;
-              }
-              nav ul li::after
-              {
-                content: '';
-                height: 3px;
-                width: 0;
-                background: #ff6666;
-                position: absolute;
-                left: 0%;
-                bottom: -5px;
-                transition: 0.5s;
-              }
-              nav ul li:hover::after
-              {
-                width: 100%;
-              }
-              .shadowt {
-                box-shadow: 0 .5rem 1rem #ff6666 !important;
-              }
-              form
-              {
-                margin-top: 100px;
-              }
-              form label
-              {
-                position: relative;
-                left: 450px;
-                top: -250px;
-                font-size: 40px;
-              }
-              form textarea
-              {
-                position: relative;
-                left: 150px;
-                top: 100px;
-                width: 600px;
-                height: 300px;
-              }
-              h4
-              {
-                position: relative;
-                top: 200px;
-                left: 500px;
-              }
-              .add_button
-              {
-                background-color: #ff6666;
-                color: #f1f1f1;
-                margin-bottom: auto;
-                position: relative;
-                left: 50px;
-                top: 170px;
-              }
-              .add_button:hover
-              {
-                border-color: #ff6666;
-                color: #ff6666;
-              }    
-            
-        </style>
+    }
+    .btns ion-icon
+    {
+      line-height: 90px;
+      font-size: 40px;
+      transition: 0.2s linear;
+    }
+    .btns:hover ion-icon
+    {
+      transform: scale(1.2);
+      color: #f1f1f1;
+    }
+    .btns::before
+    {
+      content: "";
+      position: absolute;
+      width: 120%;
+      height: 120%;
+      background: #ff6666;
+      transform: rotate(45deg);
+      left: -110%;
+      top: 90%;
+    }
+    .btns:hover::before
+    {
+      animation-name: aaa;
+      animation-duration:0.7s ;
+      top: -10%;
+      left: -10%;
+    }
+    @keyframes aaa
+    {
+      0%{
+        left: -110%;
+        top:90%;
+      }
+      50%{
+        left: 10%;
+        top: -30%;
+      }
+      100%{
+        top: -10%;
+        left: -10%;
+      }
+    }
+    .nav-href
+    {
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+        margin-right: 50px;
+        position: relative;
+        left: -100px;
+        top: 20px;
+    }
+    nav  
+    {
+      position: fixed;
+    }
+    nav p 
+    {
+        color: #ff6666;
+    }
+    nav ul
+    {
+      margin-right: 70px;
+    }
+    nav ul li
+    {
+      position: relative;
+      display: inline-block;
+    }
+    nav ul li a
+    {
+      text-decoration: none;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    nav ul li::after
+    {
+      content: '';
+      height: 3px;
+      width: 0;
+      background: #ff6666;
+      position: absolute;
+      left: 0%;
+      bottom: -5px;
+      transition: 0.5s;
+    }
+    nav ul li:hover::after
+    {
+      width: 100%;
+    }
+    .shadowt {
+      box-shadow: 0 .5rem 1rem #ff6666 !important;
+    }
+    form
+    {
+      margin-top: 100px;
+    }
+    form label
+    {
+      position: relative;
+      left: 450px;
+      top: -250px;
+      font-size: 40px;
+    }
+    form textarea
+    {
+      position: relative;
+      left: 150px;
+      top: 100px;
+      width: 600px;
+      height: 300px;
+    }
+    h4
+    {
+      position: relative;
+      top: 200px;
+      left: 500px;
+    }
+    .add_button
+    {
+      background-color: #ff6666;
+      color: #f1f1f1;
+      margin-bottom: auto;
+      position: relative;
+      left: 50px;
+      top: 170px;
+    }
+    .add_button:hover
+    {
+      border-color: #ff6666;
+      color: #ff6666;
+    }  
+    .mobile-nav
+    {
+      display: none;
+    }
+    /*Responsive Design */
+    @media screen and (max-width:500px) and (min-width:200px)
+    {
+      body
+      {
+        padding: 0% 0% 0% 0%;   
+        margin: 0% 0% 0% 0%;
+        width: 100%;
+        height: auto;
+        box-sizing: inherit;
+        background-position: 100%;
+      }
+      form
+      {
+       margin-top: 20%;
+      }
+       form label
+       {
+        position: relative;
+        left: 5%;
+        top: 0px;
+        font-size: 30px;
+       }
+       form textarea
+       {
+        position: relative;
+        left: 65px;
+        top: 35px;
+        width: 70%;
+        height: 50%;
+       }
+       .nav-href2
+        {
+          text-decoration: none;
+          color: black;
+          font-size: 23px;
+          margin-top: 10px;
+        } 
+       .add_button
+        {
+          background-color: #ff6666;
+          color: #f1f1f1;
+          margin-bottom: auto;
+          position: relative;
+          left: 10%;
+          top: 100px;
+        }
+        .add_button:hover
+        {
+          border-color: #ff6666;
+          color: #ff6666;
+        }    
+       .mobile-nav
+       {
+         display: block;
+         margin-bottom: 0%;
+         padding: 0% 0% 0% 0%;
+         font-size: 22px;
+         background-color: #f1f1f1;
+         background-size: cover;
+         padding-right: 0%;
+       }
+       .nav-icon
+       {
+         position: relative;
+         left: 75%;
+         top: -55px;
+         font-size: 25px;
+       }
+       .lap-nav
+       {
+         display: none;
+       }
+       .text2
+       {
+        position: relative;
+        top: 700px;
+        left: 0%;
+        right: 0%;
+        bottom: 0%;
+        margin-left: 60px;
+       }
+       footer
+       {
+         position: relative;
+         left: 3%;
+         width: 100%;
+       }
+    } 
+    /*Responsive Design for tablet*/
+    @media screen and (max-width:1300px) and (min-width:500px)
+    {
+      body
+      {
+        background-size: inherit;
+        box-sizing: inherit;
+      }
+      .nav-href
+      {
+        position: relative;
+        left: 35%;
+      }
+      form
+      {
+        margin-top: 10%;
+      }
+      form textarea
+      {
+        position: relative;
+        top: 30%;
+      }
+      h4
+      {
+        position: relative;
+        top: 27%;
+        left: 10%;
+      }
+      .text2
+      {
+        position: relative;
+        left:20%;
+      }
+    }
+  </style>
 </head>
 <body>
     <!--Script section-->
@@ -181,7 +314,7 @@
 
 
     <!--Navbar-->
-    <nav class="navbar shadow p-3 mb-5 bg-body rounded">
+    <nav class="navbar shadow p-3 mb-5 bg-body rounded lap-nav">
         <div>
             <p class="display-5"> Book Shelf  <i class="bi bi-book"></i></b>
         </div>
@@ -208,6 +341,44 @@
                 </li>
             </ul>
         </div>
+    </nav>
+
+    <!--Mobile navbar-->
+    <nav class="navbar shadow mobile-nav bg-light">
+      <div class="container-fluid">
+        <p class="display-5"> Book Shelf <img src="{% static 'book.gif'%}" class="book_icon" alt="" width="12%" height="12%"></p>
+        <button class="navbar-toggler nav-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div disableScrollLock={true} class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1">
+              <li class="nav-item nav-href2 li">
+                  <a class="nav-link" href="{% url 'book_shelf:home'%}"><i class="bi bi-house"></i> Home</a>
+              </li>
+              <li class="nav-item nav-href2 li">
+                <a href="{% url 'book_shelf:add_comment'%}" class="nav-link"><i class="bi bi-chat-left-dots-fill"></i> Add Comment</a>
+              </li>
+              <li class="nav-item nav-href2 li">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-diagram-3-fill"></i> Types
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:police'%}">Mystry and police</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:sciences'%}">Sciences</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:programming'%}">Programming</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:languages'%}">Languages</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:islam'%}">Islam</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book_shelf:psychology'%}">Psychology</a></li>
+                </ul>
+              </li>
+          </ul>
+          </div>
+        </div>
+      </div>
     </nav>
 
 

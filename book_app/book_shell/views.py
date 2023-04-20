@@ -237,5 +237,3 @@ def log_out(request):
     if request.method == 'POST':
         logout(request)   
         return redirect ('book_shelf:home')
-
-
