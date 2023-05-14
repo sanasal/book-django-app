@@ -18,12 +18,14 @@
       background-size: cover;
       background-repeat: no-repeat;
       box-sizing: inherit;
+      margin: 0% 0% 0% 0%;
+      padding: 0% 0% 0% 0%;
     }
      footer
     {
       position: relative;
       top: 400px;
-      left: 50px;;
+      margin-left:0%;
       transform: translateY(-50%);
       width: 100%;
       text-align: center;
@@ -89,13 +91,13 @@
     }
     .nav-href
     {
-        text-decoration: none;
-        color: black;
-        font-size: 18px;
-        margin-right: 50px;
-        position: relative;
-        left: -100px;
-        top: 20px;
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+      margin-right: 50px;
+      position: relative;
+      left: -50px;
+      top: 20px;
     }
     nav  
     {
@@ -103,7 +105,7 @@
     }
     nav p 
     {
-        color: #ff6666;
+      color: #ff6666;
     }
     nav ul
     {
@@ -145,15 +147,15 @@
     form label
     {
       position: relative;
-      left: 450px;
       top: -250px;
+      margin-left: 30%;
       font-size: 40px;
     }
     form textarea
     {
       position: relative;
-      left: 150px;
       top: 100px;
+      margin-left: -18%;
       width: 600px;
       height: 300px;
     }
@@ -161,7 +163,7 @@
     {
       position: relative;
       top: 200px;
-      left: 500px;
+      margin-left:30%;
     }
     .add_button
     {
@@ -169,7 +171,6 @@
       color: #f1f1f1;
       margin-bottom: auto;
       position: relative;
-      left: 50px;
       top: 170px;
     }
     .add_button:hover
@@ -200,14 +201,14 @@
        form label
        {
         position: relative;
-        left: 5%;
+        margin-left: 0%;
         top: 0px;
         font-size: 30px;
        }
        form textarea
        {
         position: relative;
-        left: 65px;
+        left: 100px;
         top: 35px;
         width: 70%;
         height: 50%;
@@ -266,7 +267,7 @@
        footer
        {
          position: relative;
-         left: 3%;
+         left: 0%;
          width: 100%;
        }
     } 
@@ -292,16 +293,10 @@
         position: relative;
         top: 30%;
       }
-      h4
-      {
-        position: relative;
-        top: 27%;
-        left: 10%;
-      }
       .text2
       {
         position: relative;
-        left:20%;
+        margin-left: 1%;
       }
     }
   </style>
@@ -316,7 +311,7 @@
     <!--Navbar-->
     <nav class="navbar shadow p-3 mb-5 bg-body rounded lap-nav">
         <div>
-            <p class="display-5"> Book Shelf  <i class="bi bi-book"></i></b>
+            <p class="display-5"> Book Shelf  <img src="{% static 'book.gif'%}" class="book_icon" alt="" width="12%" height="12%"></b>
         </div>
         <div>
             <ul>
