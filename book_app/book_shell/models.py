@@ -25,7 +25,7 @@ class Mystry_and_Police(models.Model):
     img = models.ImageField(default = '' , blank=True)
     auther = models.CharField(max_length=200 , blank=True)
     story = models.TextField(blank=True)
-    informention =models.TextField(blank=True)
+    information =models.TextField(blank=True)
     pdf_file = models.FileField(default='' , blank=True)
 
     def __str__(self):
@@ -37,7 +37,7 @@ class Sciences(models.Model):
     img = models.ImageField(default = '' , blank=True)
     auther = models.CharField(max_length=200 , blank=True)
     story = models.TextField(blank=True)
-    informention =models.TextField(blank=True)
+    information =models.TextField(blank=True)
     pdf_file = models.FileField(default='' , blank=True)
     
 
@@ -50,10 +50,9 @@ class Programming(models.Model):
     img = models.ImageField(default = '' , blank=True)
     auther = models.CharField(max_length=200 , blank=True)
     story = models.TextField(blank=True)
-    informention =models.TextField(blank=True)
+    information =models.TextField(blank=True)
     pdf_file = models.FileField(default='' , blank=True)
     
-
     def __str__(self):
         return self.name
 
@@ -63,10 +62,9 @@ class Languages(models.Model):
     img = models.ImageField(default = '' , blank=True)
     auther = models.CharField(max_length=200 , blank=True)
     story = models.TextField(blank=True)
-    informention =models.TextField(blank=True)
+    information =models.TextField(blank=True)
     pdf_file = models.FileField(default='' , blank=True)
     
-
     def __str__(self):
         return self.name
 
@@ -76,6 +74,7 @@ class Islam(models.Model):
     img = models.ImageField(default = '' , blank=True)
     auther = models.CharField(max_length=200 , blank=True)
     story = models.TextField(blank=True)
+    information = models.FileField(default='' , blank=True)
     pdf_file = models.FileField(default='' , blank=True)
     
 
@@ -91,10 +90,9 @@ class Psychology(models.Model):
     img = models.ImageField(default = '' , blank=True)
     auther = models.CharField(max_length=200 , blank=True)
     story = models.TextField(blank=True)
-    informention =models.TextField(blank=True)
+    information =models.TextField(blank=True)
     pdf_file = models.FileField(default='' , blank=True)
     
-
     def __str__(self):
         return self.name
 
