@@ -24,10 +24,10 @@ index_path =  os.path.join(os.path.dirname(os.path.dirname(__file__)),'book_app/
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-36gq$xeb)tdyho2m6oegz8t*@gvn4*d0tje3q!qn&cjb7^g60c'
+SECRET_KEY =  'django-insecure-36gq$xeb)tdyho2m6oegz8t*@gvn4*d0tje3q!qn&cjb7^g60c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
    
