@@ -18,7 +18,7 @@
       margin-left: -0.65em;
       position: absolute;
       top: 250px;
-      left: 150px;
+      left: 10%;
     }
     .loader2 {
       display: flex;
@@ -26,7 +26,7 @@
       margin-left: -0.65em;
       position:absolute;
       top: 250px;
-      left: 1330px;
+      left: 90%;
     }
     .load1 {
       position: absolute;
@@ -38,7 +38,6 @@
       background-color: #ff6666;
       box-shadow: 0 1px 7px rgba(0,0,0,0.3);
     }
-    
     .load2 {
       position: absolute;
       margin-right: 1em;
@@ -49,7 +48,6 @@
       background-color:white;
       animation: 2s flow2 infinite;
     }
-    
     .load3 {
       position: absolute;
       margin-right: 1em;
@@ -60,7 +58,6 @@
       background-color: white;
       animation: 2s flow3 infinite;
     }
-    
     .load4 {
       position: absolute;
       margin-right: 1em;
@@ -306,17 +303,17 @@
     form label
     {
       position: relative;
-      left: 400px;
-      top: -230px;
+      left:20%;
+      top: -250px;
       font-size: 40px;
     }
     form textarea
     {
       position: relative;
-      left: 130px;
+      left:0%;
       top: 100px;
-      width: 600px;
-      height: 300px;
+      width: 50%;
+      height: 40%;
     }
     h4
     {
@@ -355,7 +352,7 @@
     .comments_show textarea
     {
       font-size: 20px;
-      width: 500px;
+      width: 50%;
       height: 150px;
       margin:0px 0px 0px 0px;
       border-color: #ff6666;
@@ -480,8 +477,8 @@
         left: -10%;
       }
     }
-    /*Responsive Design */
-    @media screen and (max-width:800px) and (min-width:200px)
+    /*Responsive Design for mobile*/
+    @media screen and (max-width:531px) and (min-width:200px)
     {
       body
       {
@@ -497,7 +494,7 @@
        form label
        {
         position: relative;
-        left: 5%;
+        left: 3%;
         top: 0px;
         font-size: 30px;
         box-sizing: border-box;
@@ -505,7 +502,7 @@
        form textarea
        {
         position: relative;
-        margin-left: -100px;
+        margin-left: 10px;
         top: 35px;
         width: 70%;
         height: 50%;
@@ -525,7 +522,7 @@
           color: #f1f1f1;
           margin-bottom: auto;
           position: relative;
-          left: 15%;
+          left: 13%;
           top: 100px;
           box-sizing: border-box;
         }
@@ -601,7 +598,6 @@
           border-top: 2px;
           border-right: 4px;
           border-left: 0cm;
-
         }
         .profile
         {
@@ -610,7 +606,6 @@
           margin-top: 50px;
           font-size: 25px;
           color: #ff6666;
-
         }
         .container2 {
           display: block;
@@ -637,6 +632,159 @@
          width: 100%;
          box-sizing: inherit;
        }
+    } 
+    /*Responsive Design for tablet*/
+    @media screen and (max-width:1000px) and (min-width:530px)
+    {
+      body
+      {
+        padding: 0% 0 0 0;   
+        width: 100%;
+        height: auto;
+        background-position: 100%;
+      }
+     form
+     {
+       margin-top: 20%;
+     }
+     form label
+     {
+      position: relative;
+      left: 7%;
+      top: 0px;
+      font-size: 30px;
+      box-sizing: border-box;
+     }
+     form textarea
+     {
+      position: relative;
+      margin-left: 20px;
+      top: 35px;
+      width: 70%;
+      height: 50%;
+      box-sizing: border-box;
+     }
+     .nav-href2
+      {
+        text-decoration: none;
+        color: black;
+        font-size: 23px;
+        margin-top: 10px;
+        box-sizing: border-box;
+      } 
+     .add_button
+      {
+        background-color: #ff6666;
+        color: #f1f1f1;
+        margin-bottom: auto;
+        position: relative;
+        left: 15%;
+        top: 100px;
+        box-sizing: border-box;
+      }
+      .add_button:hover
+      {
+        border-color: #ff6666;
+        color: #ff6666;
+        box-sizing: border-box;
+      }    
+     .mobile-nav
+     {
+       display: block;
+       margin-bottom: 10%;
+       font-size: 22px;
+       background-color: #f1f1f1;
+       background-size: cover;
+       padding-right: 0%;
+       box-sizing: border-box;
+     }
+     .nav-icon
+     {
+       position: relative;
+       left: -30px;
+       top: 5px;
+       font-size: 25px;
+       box-sizing: border-box;
+     }
+     .lap-nav
+     {
+       display: none;
+     }
+     h4
+      {
+        position: relative;
+        top: 150px;
+        margin-left: 5px;
+      }
+      .loader {
+        display: none;
+        align-items: center;
+        margin-left: -0.65em;
+        position: absolute;
+        top: 980px;
+        left: 150px;
+      }
+      .loader2 {
+        display: none;
+      }
+      .comments_show
+      {
+        position: relative;
+        top: 500px;
+        left: 0px;
+      }
+      .comments_show h1
+      {
+        position: relative;
+        top:0px;
+        margin-left: -30px;
+
+      }
+      .comments_show textarea
+      {
+        font-size: 20px;
+        width: 300px;
+        height: 100px;
+        margin-left: -95px;
+        margin-top: 80px;
+        border-color: #ff6666;
+        border-width: 5px;
+        border-top: 2px;
+        border-right: 4px;
+        border-left: 0cm;
+      }
+      .profile
+      {
+        position:absolute;
+        margin-left: -25px;
+        margin-top: 50px;
+        font-size: 25px;
+        color: #ff6666;
+      }
+      .container2 {
+        display: block;
+        position: relative;
+        left: 30px;
+        top: 15px;
+        cursor: pointer;
+        user-select: none;
+
+      }
+      .books_photo
+      {
+        position: relative;
+        top:550px;
+        left:3%;
+        width: 50%;
+        height: auto;
+      }
+     footer
+     {
+       position: relative;
+       left:0px;
+       width: 100%;
+       box-sizing: inherit;
+     }
     } 
   </style>
 </head>

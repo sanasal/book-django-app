@@ -182,7 +182,7 @@
     {
       display: none;
     }
-    /*Responsive Design */
+    /*Responsive Design for mobile*/
     @media screen and (max-width:500px) and (min-width:200px)
     {
       body
@@ -272,31 +272,64 @@
        }
     } 
     /*Responsive Design for tablet*/
-    @media screen and (max-width:1300px) and (min-width:500px)
+    @media screen and (max-width:1100px) and (min-width:500px)
     {
       body
       {
         background-size: inherit;
         box-sizing: inherit;
       }
-      .nav-href
-      {
-        position: relative;
-        left: 35%;
-      }
+      .mobile-nav
+       {
+         display: block;
+         margin-bottom: 0%;
+         padding: 0% 0% 0% 0%;
+         font-size: 22px;
+         background-color: #f1f1f1;
+         background-size: cover;
+         padding-right: 0%;
+       }
+       .nav-icon
+       {
+         position: relative;
+         left: 0%;
+         top: 0px;
+         font-size: 25px;
+       }
+       .lap-nav
+       {
+         display: none;
+       }
       form
       {
         margin-top: 10%;
       }
+      form label
+      {
+        position: relative;
+        top: 0%;
+        left: -150px;
+      }
       form textarea
       {
         position: relative;
-        top: 30%;
+        top: 40%;
+        left: 30%;
+        width: 80%;
+      }
+      .add_button
+      {
+        background-color: #ff6666;
+        color: #f1f1f1;
+        margin-bottom: auto;
+        position: relative;
+        left: 25%;
+        top:100px;
       }
       .text2
       {
         position: relative;
-        margin-left: 1%;
+        margin-left: 20%;
       }
     }
   </style>

@@ -91,6 +91,7 @@
       nav ul
       {
         margin-right: 70px;
+        padding-left: 0%;
       }
       nav ul li
       {
@@ -568,8 +569,12 @@
         }
       }
         /* Responsive Design for tablet*/
-        @media screen and (min-width:500px) and (max-width:1300px)
+        @media screen and (min-width:500px) and (max-width:1400px)
         {
+          nav ul
+          {
+            width: inherit;
+          }
           .nav-href
           {
             text-decoration: none;
@@ -577,13 +582,13 @@
             font-size: 18px;
             display: inline-block;
             position: relative;
-            left: 35%;
+            left: 28%;
             top: 20%;
           }
           .nav-prof
           {
             position: absolute;
-            left: 83%;
+            left: 75%;
             top: 30px;
             font-size: 35px;
             color: #ff6666;
@@ -592,6 +597,10 @@
           {
             position:absolute;
             left: 90%;
+          }
+          .text
+          {
+            font-size: 30px;
           }
           .three-body
           {
@@ -627,7 +636,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
-            <ul class="navbar-nav `justify-content-end flex-grow-1 pe-3">
+            <ul class="navbar-nav flex-grow-1 pe-3">
               <li class="nav-item nav-href2 li">
                   <a class="nav-link" href="{% url 'book_shelf:home'%}"><i class="bi bi-house"></i> Home</a>
               </li>
@@ -687,7 +696,7 @@
                   <a href="{% url 'book_shelf:add_comment'%}" class="nav-link"><i class="bi bi-chat-left-dots-fill"></i> Add Comment</a>
                 </li>
                 <li class="nav-item nav-href li">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-diagram-3-fill"></i> Types
                   </a>
                   <ul class="dropdown-menu dropdown-menu-dark">
