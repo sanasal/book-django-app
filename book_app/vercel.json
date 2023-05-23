@@ -17,14 +17,14 @@
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
+      "source": "/static/(.*)",
+      "destination": "/static/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "book_app/wsgi.py"
+      "source": "/(.*)",
+      "destination": "book_app/wsgi.py"
     }
   ]
 }
