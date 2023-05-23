@@ -27,9 +27,9 @@ index_path =  os.path.join(os.path.dirname(os.path.dirname(__file__)),'book_app/
 SECRET_KEY =  'django-insecure-36gq$xeb)tdyho2m6oegz8t*@gvn4*d0tje3q!qn&cjb7^g60c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app' ,'.now.sh']
+ALLOWED_HOSTS = ['.vercel.app' , '127.0.0.1']
    
 
 # Application definition
@@ -129,10 +129,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATICFILES_DIRS=[os.path.join(BASE_DIR , 'static')]
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  
-STATICFILES_DIRS = [BASE_DIR/'static',]
-STATIC_ROOT = BASE_DIR/'staticfiles'
+STATICFILES_DIRS=[os.path.join(BASE_DIR , 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
