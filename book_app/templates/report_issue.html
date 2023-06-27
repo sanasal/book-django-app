@@ -335,83 +335,82 @@
   </style>
 </head>
 <body>
-    <!--Script section-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <!--Script section-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
 
-    <!--Navbar-->
-    <nav class="navbar shadow p-3 mb-5 bg-body rounded lap-nav">
-        <div>
-            <p class="display-5"> Book Shelf  <img src="{% static 'book.gif'%}" class="book_icon" alt="" width="12%" height="12%"></b>
-        </div>
-        <div>
-            <ul>
-                <li class="nav-item nav-href li">
-                    <a class="nav-link" href="{% url 'book_shelf:home'%}"><i class="bi bi-house"></i> Home</a>
-                </li>
-                <li class="nav-item nav-href li">
-                  <a href="{% url 'book_shelf:add_comment'%}" class="nav-link"><i class="bi bi-chat-left-dots-fill"></i> Add Comment</a>
-                </li>
-                <li class="nav-item nav-href li">
-                  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-diagram-3-fill"></i> Types
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="{% url 'book_shelf:police'%}">Mystry and police</a></li>
-                    <li><a class="dropdown-item" href="{% url 'book_shelf:sciences'%}">Sciences</a></li>
-                    <li><a class="dropdown-item" href="{% url 'book_shelf:programming'%}">Programming</a></li>
-                    <li><a class="dropdown-item" href="{% url 'book_shelf:languages'%}">Languages</a></li>
-                    <li><a class="dropdown-item" href="{% url 'book_shelf:islam'%}">Islam</a></li>
-                    <li><a class="dropdown-item" href="{% url 'book_shelf:psychology'%}">Psychology</a></li>
-                  </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!--Mobile navbar-->
-    <nav class="navbar shadow mobile-nav bg-light">
-      <div class="container-fluid">
-        <p class="display-5"> Book Shelf <img src="{% static 'book.gif'%}" class="book_icon" alt="" width="12%" height="12%"></p>
-        <button class="navbar-toggler nav-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div disableScrollLock={true} class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1">
-              <li class="nav-item nav-href2 li">
-                  <a class="nav-link" href="{% url 'book_shelf:home'%}"><i class="bi bi-house"></i> Home</a>
-              </li>
-              <li class="nav-item nav-href2 li">
-                <a href="{% url 'book_shelf:add_comment'%}" class="nav-link"><i class="bi bi-chat-left-dots-fill"></i> Add Comment</a>
-              </li>
-              <li class="nav-item nav-href2 li">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="bi bi-diagram-3-fill"></i> Types
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="{% url 'book_shelf:police'%}">Mystry and police</a></li>
-                  <li><a class="dropdown-item" href="{% url 'book_shelf:sciences'%}">Sciences</a></li>
-                  <li><a class="dropdown-item" href="{% url 'book_shelf:programming'%}">Programming</a></li>
-                  <li><a class="dropdown-item" href="{% url 'book_shelf:languages'%}">Languages</a></li>
-                  <li><a class="dropdown-item" href="{% url 'book_shelf:islam'%}">Islam</a></li>
-                  <li><a class="dropdown-item" href="{% url 'book_shelf:psychology'%}">Psychology</a></li>
-                </ul>
-              </li>
+  <!--Navbar-->
+  <nav class="navbar shadow p-3 mb-5 bg-body rounded lap-nav">
+    <div>
+      <p class="display-5"> Book Shelf  <img src="{% static 'book.gif'%}" class="book_icon" alt="" width="12%" height="12%"></b>
+    </div>
+    <div>
+      <ul>
+        <li class="nav-item nav-href li">
+            <a class="nav-link" href="{% url 'book_shelf:home'%}"><i class="bi bi-house"></i> Home</a>
+        </li>
+        <li class="nav-item nav-href li">
+          <a href="{% url 'book_shelf:add_comment'%}" class="nav-link"><i class="bi bi-chat-left-dots-fill"></i> Add Comment</a>
+        </li>
+        <li class="nav-item nav-href li">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-diagram-3-fill"></i> Types
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="{% url 'book_shelf:police'%}">Mystry and police</a></li>
+            <li><a class="dropdown-item" href="{% url 'book_shelf:sciences'%}">Sciences</a></li>
+            <li><a class="dropdown-item" href="{% url 'book_shelf:programming'%}">Programming</a></li>
+            <li><a class="dropdown-item" href="{% url 'book_shelf:languages'%}">Languages</a></li>
+            <li><a class="dropdown-item" href="{% url 'book_shelf:islam'%}">Islam</a></li>
+            <li><a class="dropdown-item" href="{% url 'book_shelf:psychology'%}">Psychology</a></li>
           </ul>
-          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--Mobile navbar-->
+  <nav class="navbar shadow mobile-nav bg-light">
+    <div class="container-fluid">
+      <p class="display-5"> Book Shelf <img src="{% static 'book.gif'%}" class="book_icon" alt="" width="12%" height="12%"></p>
+      <button class="navbar-toggler nav-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div disableScrollLock={true} class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1">
+            <li class="nav-item nav-href2 li">
+                <a class="nav-link" href="{% url 'book_shelf:home'%}"><i class="bi bi-house"></i> Home</a>
+            </li>
+            <li class="nav-item nav-href2 li">
+              <a href="{% url 'book_shelf:add_comment'%}" class="nav-link"><i class="bi bi-chat-left-dots-fill"></i> Add Comment</a>
+            </li>
+            <li class="nav-item nav-href2 li">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-diagram-3-fill"></i> Types
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="{% url 'book_shelf:police'%}">Mystry and police</a></li>
+                <li><a class="dropdown-item" href="{% url 'book_shelf:sciences'%}">Sciences</a></li>
+                <li><a class="dropdown-item" href="{% url 'book_shelf:programming'%}">Programming</a></li>
+                <li><a class="dropdown-item" href="{% url 'book_shelf:languages'%}">Languages</a></li>
+                <li><a class="dropdown-item" href="{% url 'book_shelf:islam'%}">Islam</a></li>
+                <li><a class="dropdown-item" href="{% url 'book_shelf:psychology'%}">Psychology</a></li>
+              </ul>
+            </li>
+        </ul>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-
-    <!--Field Section-->
-    <form action="/Reoprt issue/" method="post">
+  <!--Field Section-->
+  <form action="/Reoprt issue/" method="post">
         {% csrf_token %} 
         <tr>
             <th><label for="id_issue">Report your issue:</label></th>
@@ -420,14 +419,14 @@
             </td>
         </tr>
         <button class="btn add_button" type="submit" value="Add">Add</button>
-    </form>
-    <div>
-        <h4 class="text2">Thanks For Your Feedback !!</h4>
-    </div>
+  </form>
+  <div>
+    <h4 class="text2">Thanks For Your Feedback !!</h4>
+  </div>
 
 
-   <!--footer section-->
-   <footer>
+  <!--footer section-->
+  <footer>
     <div class="footer">
       <a class="btns" href="#facebook">
         <ion-icon name="logo-facebook"></ion-icon>

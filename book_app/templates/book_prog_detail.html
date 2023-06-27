@@ -11,356 +11,356 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
   <title>Book Details</title>
   <style>
-      .footer
-      {
-        position: relative;
-        top: 200px;
-        left: 50px;;
-        transform: translateY(-50%);
-        width: 100%;
-        text-align: center;
-      }
-      .btns
-      {
-        padding-top: 20px;
-        padding-bottom: 4%;
-        display: inline-block;
-        width: 90px;
-        height:65px;
-        margin: 20px;
-        border-radius: 50%;
-        box-shadow: 0 2px 18px rgb(0, 0, 0 , 0.115);
-        color: #ff6666;
-        overflow: hidden;
-        position: relative;
+    .footer
+    {
+      position: relative;
+      top: 200px;
+      left: 50px;;
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: center;
+    }
+    .btns
+    {
+      padding-top: 20px;
+      padding-bottom: 4%;
+      display: inline-block;
+      width: 90px;
+      height:65px;
+      margin: 20px;
+      border-radius: 50%;
+      box-shadow: 0 2px 18px rgb(0, 0, 0 , 0.115);
+      color: #ff6666;
+      overflow: hidden;
+      position: relative;
 
-      }
-      .btns ion-icon
-      {
-        line-height: 90px;
-        font-size: 40px;
-        transition: 0.2s linear;
-      }
-      .btns:hover ion-icon
-      {
-        transform: scale(1.2);
-        color: #f1f1f1;
-      }
-      .btns::before
-      {
-        content: "";
-        position: absolute;
-        width: 120%;
-        height: 120%;
-        background: #ff6666;
-        transform: rotate(45deg);
+    }
+    .btns ion-icon
+    {
+      line-height: 90px;
+      font-size: 40px;
+      transition: 0.2s linear;
+    }
+    .btns:hover ion-icon
+    {
+      transform: scale(1.2);
+      color: #f1f1f1;
+    }
+    .btns::before
+    {
+      content: "";
+      position: absolute;
+      width: 120%;
+      height: 120%;
+      background: #ff6666;
+      transform: rotate(45deg);
+      left: -110%;
+      top: 90%;
+    }
+    .btns:hover::before
+    {
+      animation-name: aaa;
+      animation-duration:0.7s ;
+      top: -10%;
+      left: -10%;
+    }
+    @keyframes aaa
+    {
+      0%{
         left: -110%;
-        top: 90%;
+        top:90%;
       }
-      .btns:hover::before
-      {
-        animation-name: aaa;
-        animation-duration:0.7s ;
+      50%{
+        left: 10%;
+        top: -30%;
+      }
+      100%{
         top: -10%;
         left: -10%;
       }
-      @keyframes aaa
-      {
-        0%{
-          left: -110%;
-          top:90%;
-        }
-        50%{
-          left: 10%;
-          top: -30%;
-        }
-        100%{
-          top: -10%;
-          left: -10%;
-        }
-      }
-      .nav-href
-      {
-          text-decoration: none;
-          color: black;
-          font-size: 18px;
-          margin-right: 50px;
-          position: relative;
-          left: -100px;
-          top: 20px;
-      }
-      nav  
-      {
-        position: fixed;
-      }
-      nav p 
-      {
-          color: #ff6666;
-      }
-      nav ul
-      {
-        margin-right: 70px;
-      }
-      nav ul li
-      {
-        position: relative;
-        display: inline-block;
-      }
-      nav ul li a
-      {
+    }
+    .nav-href
+    {
         text-decoration: none;
-        color: #fff;
-        text-transform: uppercase;
-      }
-      nav ul li::after
-      {
-        content: '';
-        height: 3px;
-        width: 0;
-        background: #ff6666;
-        position: absolute;
-        left: 0%;
-        bottom: -5px;
-        transition: 0.5s;
-      }
-      nav ul li:hover::after
-      {
-        width: 100%;
-      }
-      .button {
-        --width: 100px;
-        --height: 35px;
-        --tooltip-height: 35px;
-        --tooltip-width: 90px;
-        --gap-between-tooltip-to-button: 18px;
-        --button-color: #1163ff;
-        --tooltip-color: #fff;
-        width: var(--width);
-        height: var(--height);
-        background: var(--button-color);
+        color: black;
+        font-size: 18px;
+        margin-right: 50px;
         position: relative;
-        text-align: center;
-        border-radius: 0.45em;
-        font-family: "Arial";
-        transition: background 0.3s;
-      }
-      
-      .button::before {
-        position: absolute;
-        content: attr(data-tooltip);
-        width: var(--tooltip-width);
-        height: var(--tooltip-height);
-        background-color: var(--tooltip-color);
-        font-size: 0.9rem;
-        color: #111;
-        border-radius: .25em;
-        line-height: var(--tooltip-height);
-        bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
-        left: calc(50% - var(--tooltip-width) / 2);
-      }
-      
-      .button::after {
-        position: absolute;
-        content: '';
-        width: 0;
-        height: 0;
-        border: 10px solid transparent;
-        border-top-color: var(--tooltip-color);
-        left: calc(50% - 10px);
-        bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
-      }
-      
-      .button::after,.button::before {
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.5s;
-      }
-      
-      .text {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      .button-wrapper,.text,.icon {
-        overflow: hidden;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        color: #fff;
-      }
-      
-      .text {
-        top: 0
-      }
-      
-      .text,.icon {
-        transition: top 0.5s;
-      }
-      
-      .icon {
-        color: #fff;
-        top: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      .icon svg {
-        width: 24px;
-        height: 24px;
-      }
-      
-      .button:hover {
-        background: #6c18ff;
-      }
-      
-      .button:hover .text {
-        top: -100%;
-      }
-      
-      .button:hover .icon {
-        top: 0;
-      }
-      
-      .button:hover:before,.button:hover:after {
-        opacity: 1;
-        visibility: visible;
-      }
-      
-      .button:hover:after {
-        bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
-      }
-      
-      .button:hover:before {
-        bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
-      }
-      .items
-      {
-        margin-top: 50px;
-        margin-left: 140px;
-      }
-      .download-button
-      {
-        background-color: #ff6666;
-        color: #f1f1f1;
-        margin-bottom: auto;
-      }
-      .download-button:hover
-      {
-        border-color: #ff6666;
+        left: -100px;
+        top: 20px;
+    }
+    nav  
+    {
+      position: fixed;
+    }
+    nav p 
+    {
         color: #ff6666;
-      }
+    }
+    nav ul
+    {
+      margin-right: 70px;
+    }
+    nav ul li
+    {
+      position: relative;
+      display: inline-block;
+    }
+    nav ul li a
+    {
+      text-decoration: none;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    nav ul li::after
+    {
+      content: '';
+      height: 3px;
+      width: 0;
+      background: #ff6666;
+      position: absolute;
+      left: 0%;
+      bottom: -5px;
+      transition: 0.5s;
+    }
+    nav ul li:hover::after
+    {
+      width: 100%;
+    }
+    .button {
+      --width: 100px;
+      --height: 35px;
+      --tooltip-height: 35px;
+      --tooltip-width: 90px;
+      --gap-between-tooltip-to-button: 18px;
+      --button-color: #1163ff;
+      --tooltip-color: #fff;
+      width: var(--width);
+      height: var(--height);
+      background: var(--button-color);
+      position: relative;
+      text-align: center;
+      border-radius: 0.45em;
+      font-family: "Arial";
+      transition: background 0.3s;
+    }
+    
+    .button::before {
+      position: absolute;
+      content: attr(data-tooltip);
+      width: var(--tooltip-width);
+      height: var(--tooltip-height);
+      background-color: var(--tooltip-color);
+      font-size: 0.9rem;
+      color: #111;
+      border-radius: .25em;
+      line-height: var(--tooltip-height);
+      bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+      left: calc(50% - var(--tooltip-width) / 2);
+    }
+    
+    .button::after {
+      position: absolute;
+      content: '';
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-top-color: var(--tooltip-color);
+      left: calc(50% - 10px);
+      bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+    }
+    
+    .button::after,.button::before {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s;
+    }
+    
+    .text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .button-wrapper,.text,.icon {
+      overflow: hidden;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      color: #fff;
+    }
+    
+    .text {
+      top: 0
+    }
+    
+    .text,.icon {
+      transition: top 0.5s;
+    }
+    
+    .icon {
+      color: #fff;
+      top: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .icon svg {
+      width: 24px;
+      height: 24px;
+    }
+    
+    .button:hover {
+      background: #6c18ff;
+    }
+    
+    .button:hover .text {
+      top: -100%;
+    }
+    
+    .button:hover .icon {
+      top: 0;
+    }
+    
+    .button:hover:before,.button:hover:after {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .button:hover:after {
+      bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+    }
+    
+    .button:hover:before {
+      bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+    }
+    .items
+    {
+      margin-top: 50px;
+      margin-left: 140px;
+    }
+    .download-button
+    {
+      background-color: #ff6666;
+      color: #f1f1f1;
+      margin-bottom: auto;
+    }
+    .download-button:hover
+    {
+      border-color: #ff6666;
+      color: #ff6666;
+    }
+    .mobile-nav
+    {
+      visibility: hidden;
+    }
+    /* Responsive Design */
+    @media screen and (max-width:800px) and (min-width:200px)
+    {
       .mobile-nav
       {
-        visibility: hidden;
+        visibility: visible;
+        margin-bottom: 10%;
+        font-size: 22px;
       }
-      /* Responsive Design */
-      @media screen and (max-width:800px) and (min-width:200px)
+      .nav-icon
       {
-        .mobile-nav
-        {
-          visibility: visible;
-          margin-bottom: 10%;
-          font-size: 22px;
-        }
-        .nav-icon
-        {
-          position: relative;
-          left: 75%;
-          top: -55px;
-          font-size: 25px;
-        }
-        .lap-nav
-        {
-          display: none;
-        }
+        position: relative;
+        left: 75%;
+        top: -55px;
+        font-size: 25px;
       }
+      .lap-nav
+      {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
-    <!--Script section-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <!--Script section-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
 
-    <!--Navbar-->
-    <nav class="navbar shadow p-3 mb-5 bg-body rounded lap-nav">
-        <div>
-            <p class="display-5"> Book Shelf  <img src="{% static 'book.gif'%}" class="book_icon" alt="" width="12%" height="12%"></b>
-        </div>
-        <div>
-            <ul>
-                <li class="nav-item nav-href li">
-                    <a class="nav-link" href="{% url 'book_shelf:home'%}"><i class="bi bi-house"></i> Home</a>
-                </li>
-                <li class="nav-item nav-href li">
-                  <a href="{% url 'book_shelf:report_issue'%}" class="nav-link"><i class="bi bi-telephone-fill"></i>  Report issue</a>
-                </li>
-                <li class="nav-item nav-href li">
-                  <a href="{% url 'book_shelf:add_comment'%}" class="nav-link"><i class="bi bi-chat-left-dots-fill"></i> Add Comment</a>
-                </li>
-                <li class="nav-item nav-href li">
-                  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-diagram-3-fill"></i> Types
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="{% url 'book_shelf:police'%}">Mystry and police</a></li>
-                    <li><a class="dropdown-item" href="{% url 'book_shelf:sciences'%}">Sciences</a></li>
-                    <li><a class="dropdown-item" href="{% url 'book_shelf:programming'%}">Programming</a></li>
-                    <li><a class="dropdown-item" href="{% url 'book_shelf:languages'%}">Languages</a></li>
-                    <li><a class="dropdown-item" href="{% url 'book_shelf:islam'%}">Islam</a></li>
-                    <li><a class="dropdown-item" href="{% url 'book_shelf:psychology'%}">Psychology</a></li>
-                  </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!--Mobile navbar-->
-    <nav class="navbar shadow mobile-nav bg-light">
-      <div class="container-fluid">
-        <p class="display-5"> Book Shelf <img src="{% static 'book.gif'%}" class="book_icon" alt="" width="12%" height="12%"></p>
-        <button class="navbar-toggler nav-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item nav-href2 li">
-                  <a class="nav-link" href="{% url 'book_shelf:home'%}"><i class="bi bi-house"></i> Home</a>
-              </li>
-              <li class="nav-item nav-href2 li">
-                  <a href="{% url 'book_shelf:report_issue'%}" class="nav-link"><i class="bi bi-telephone-fill"></i> Report issue</a>
-              </li>
-              <li class="nav-item nav-href2 li">
-                <a href="{% url 'book_shelf:add_comment'%}" class="nav-link"><i class="bi bi-chat-left-dots-fill"></i> Add Comment</a>
-              </li>
-              <li class="nav-item nav-href2 li">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="bi bi-diagram-3-fill"></i> Types
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="{% url 'book_shelf:police'%}">Mystry and police</a></li>
-                  <li><a class="dropdown-item" href="{% url 'book_shelf:sciences'%}">Sciences</a></li>
-                  <li><a class="dropdown-item" href="{% url 'book_shelf:programming'%}">Programming</a></li>
-                  <li><a class="dropdown-item" href="{% url 'book_shelf:languages'%}">Languages</a></li>
-                  <li><a class="dropdown-item" href="{% url 'book_shelf:islam'%}">Islam</a></li>
-                  <li><a class="dropdown-item" href="{% url 'book_shelf:psychology'%}">Psychology</a></li>
-                </ul>
-              </li>
+  <!--Navbar-->
+  <nav class="navbar shadow p-3 mb-5 bg-body rounded lap-nav">
+    <div>
+      <p class="display-5"> Book Shelf  <img src="{% static 'book.gif'%}" class="book_icon" alt="" width="12%" height="12%"></b>
+    </div>
+    <div>
+      <ul>
+        <li class="nav-item nav-href li">
+            <a class="nav-link" href="{% url 'book_shelf:home'%}"><i class="bi bi-house"></i> Home</a>
+        </li>
+        <li class="nav-item nav-href li">
+          <a href="{% url 'book_shelf:report_issue'%}" class="nav-link"><i class="bi bi-telephone-fill"></i>  Report issue</a>
+        </li>
+        <li class="nav-item nav-href li">
+          <a href="{% url 'book_shelf:add_comment'%}" class="nav-link"><i class="bi bi-chat-left-dots-fill"></i> Add Comment</a>
+        </li>
+        <li class="nav-item nav-href li">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-diagram-3-fill"></i> Types
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="{% url 'book_shelf:police'%}">Mystry and police</a></li>
+            <li><a class="dropdown-item" href="{% url 'book_shelf:sciences'%}">Sciences</a></li>
+            <li><a class="dropdown-item" href="{% url 'book_shelf:programming'%}">Programming</a></li>
+            <li><a class="dropdown-item" href="{% url 'book_shelf:languages'%}">Languages</a></li>
+            <li><a class="dropdown-item" href="{% url 'book_shelf:islam'%}">Islam</a></li>
+            <li><a class="dropdown-item" href="{% url 'book_shelf:psychology'%}">Psychology</a></li>
           </ul>
-          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--Mobile navbar-->
+  <nav class="navbar shadow mobile-nav bg-light">
+    <div class="container-fluid">
+      <p class="display-5"> Book Shelf <img src="{% static 'book.gif'%}" class="book_icon" alt="" width="12%" height="12%"></p>
+      <button class="navbar-toggler nav-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item nav-href2 li">
+                <a class="nav-link" href="{% url 'book_shelf:home'%}"><i class="bi bi-house"></i> Home</a>
+            </li>
+            <li class="nav-item nav-href2 li">
+                <a href="{% url 'book_shelf:report_issue'%}" class="nav-link"><i class="bi bi-telephone-fill"></i> Report issue</a>
+            </li>
+            <li class="nav-item nav-href2 li">
+              <a href="{% url 'book_shelf:add_comment'%}" class="nav-link"><i class="bi bi-chat-left-dots-fill"></i> Add Comment</a>
+            </li>
+            <li class="nav-item nav-href2 li">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-diagram-3-fill"></i> Types
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="{% url 'book_shelf:police'%}">Mystry and police</a></li>
+                <li><a class="dropdown-item" href="{% url 'book_shelf:sciences'%}">Sciences</a></li>
+                <li><a class="dropdown-item" href="{% url 'book_shelf:programming'%}">Programming</a></li>
+                <li><a class="dropdown-item" href="{% url 'book_shelf:languages'%}">Languages</a></li>
+                <li><a class="dropdown-item" href="{% url 'book_shelf:islam'%}">Islam</a></li>
+                <li><a class="dropdown-item" href="{% url 'book_shelf:psychology'%}">Psychology</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!--Book Details-->
+  <!--Book Details-->
 
     <!--img section-->
     <section class="container">

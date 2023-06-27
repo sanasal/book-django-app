@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm , AuthenticationForm
 from django.contrib.auth import login , logout
 from .models import Islam, Languages, Psychology
-from .models import Mystry_and_Police,Programming, Sciences
+from .models import Mystry_and_Police,Programming, Science
 from .models import Add_Comment , Report_Issue
 from .models import Profile
 from django.http import JsonResponse
@@ -22,10 +22,11 @@ from . import forms1
 @csrf_protect
 
 
+#manage home page 
 def home(request):
     islams = Islam.objects.all()
     programmings = Programming.objects.all()
-    sciences = Sciences.objects.all()
+    sciences = Science.objects.all()
     mystrys = Mystry_and_Police.objects.all()
     psychologys= Psychology.objects.all()
     languages = Languages.objects.all()
@@ -37,35 +38,41 @@ def home(request):
       'sciences' : sciences}   
     return render(request, 'book.html' ,context)
 
+#Go to Police Section
 def police_view(request):
     mystrys = Mystry_and_Police.objects.all()
     context = {
       'mystrys' : mystrys,}   
     return render(request, 'police.html' , context)
 
+#Go to Science Section
 def Sciences_view(request):
-    sciences = Sciences.objects.all()
+    sciences = Science.objects.all()
     context = {
       'sciences' : sciences}   
     return render(request , 'sciences.html' , context)
 
+#Go to Programming Section
 def Programming_view(request):
     programmings = Programming.objects.all()
     context = {
       'programmings' : programmings ,}   
     return render(request , 'programming.html' , context)
 
+#Go to Languages Section
 def Languages_view(request):
     languages = Languages.objects.all()
     context = {
       'languages' : languages}   
     return render(request , 'languages.html' , context)
 
+#Go to Islam Section
 def Islam_view(request):
     islams = Islam.objects.all()
     context = {'islams' : islams }   
     return render(request , 'islam.html' , context)
 
+#Go to Psychology Section
 def Psychology_view(request):
     psychologys= Psychology.objects.all()
     context = {
@@ -115,7 +122,7 @@ def pdf(request , name):
     
 
 
-#search filter 
+#search filters 
 def Islam_search(request):
     if request.method == "POST":
         query_name = request.POST.get('name' , None)
@@ -203,7 +210,7 @@ def add_comment(request):
 
 
 
-#Sign in func
+#Sign in function
 def sign_in(request):
     if request.method =='POST':   
         form = UserCreationForm(request.POST)
@@ -216,7 +223,7 @@ def sign_in(request):
        form = UserCreationForm()     
     return render(request, 'sign in.html' , {'form' : form})
 
-#log in func
+#log in function
 def log_in(request):
     if request.method == 'POST' :   
         form = AuthenticationForm(data=request.POST)
@@ -232,7 +239,7 @@ def log_in(request):
     return render (request , 'log in.html' , {'form':form})
 
 
-#Log out func
+#Log out function
 def log_out(request):
     if request.method == 'POST':
         logout(request)   
