@@ -26,6 +26,9 @@ index_path =  os.path.join(os.path.dirname(os.path.dirname(__file__)),'book_app/
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY =  'django-insecure-36gq$xeb)tdyho2m6oegz8t*@gvn4*d0tje3q!qn&cjb7^g60c'
 
+#protect the site from clickjacking 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -42,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'book_app',
-    'book_shell.apps.BookShellConfig'
+    'book_shell.apps.BookShellConfig',
 ]
 
 MIDDLEWARE = [
