@@ -4,7 +4,6 @@ from django.views.decorators.csrf import csrf_protect
 #Clickjacking protection 
 from django.views.decorators.clickjacking import xframe_options_exempt
 
-from django.shortcuts import render
 from django.shortcuts import render , redirect
 from django.http import HttpResponse
 from django.template import Template , Context
